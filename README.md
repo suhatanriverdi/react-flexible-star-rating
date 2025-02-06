@@ -16,19 +16,19 @@ A highly customizable and lightweight star rating component for React applicatio
 
 ## 📦 Installation
 
+### Using npm
 ```bash
 npm install react-flexible-star-rating
 ```
 
-Alternatively, you can use other package managers:
-
+Alternatively, you can use yarn or pnpm:
+#### Using yarn
 ```bash
-# Using yarn
 yarn add react-flexible-star-rating
 ```
 
+#### Using pnpm
 ```bash
-# Using pnpm
 pnpm add react-flexible-star-rating
 ```
 
