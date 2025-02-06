@@ -1,0 +1,47 @@
+# Source files
+src/
+example/
+tests/
+
+# Config files
+.eslintignore
+.eslintrc.js
+.prettierrc
+tsconfig.json
+rollup.*
+jest.config.js
+.babelrc
+.editorconfig
+
+# Build tools
+webpack.config.js
+vite.config.ts
+
+# Git files
+.git
+.gitignore
+.github
+
+# IDE files
+.idea
+.vscode
+
+# CI/CD
+.travis.yml
+.gitlab-ci.yml
+.circleci
+
+# Deployment
+.vercel
+.netlify
+
+# Logs and caches
+*.log
+.cache
+coverage/
+.nyc_output/
+
+# Misc
+.DS_Store
+*.tgz
+.env*
