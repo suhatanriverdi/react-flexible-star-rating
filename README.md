@@ -25,7 +25,9 @@ Alternatively, you can use other package managers:
 ```bash
 # Using yarn
 yarn add react-flexible-star-rating
+```
 
+```bash
 # Using pnpm
 pnpm add react-flexible-star-rating
 ```
