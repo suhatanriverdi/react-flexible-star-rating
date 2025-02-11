@@ -136,6 +136,8 @@ function App() {
 | `color`               | `string`                   | `"#FFD700"` | Star color in HEX format                                              |
 | `onRatingChange`      | `(rating: number) => void` | `undefined` | Accepts setState or custom callback function to handle rating changes |
 
+<hr>
+
 ## 📝 Usage Examples
 
 ### Basic Star Rating

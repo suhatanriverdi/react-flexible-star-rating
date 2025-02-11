@@ -108,9 +108,16 @@ export function StarRating({
   color,
   onRatingChange,
 }: StarRatingProps): JSX.Element {
-  // Validate initial rating within acceptable range
+  // Validate initial rating within acceptable range and format
   if (initialRating > starsLength || initialRating < 0) {
     throw new Error('initialRating must be within range: 0 <= initialRating <= starsLength.');
+  }
+
+  // Validate that the rating is either a whole number or a proper half-star value
+  if (initialRating % 0.5 !== 0) {
+    throw new Error(
+      'initialRating must be a whole number or a multiple of 0.5 when half-rating is enabled.'
+    );
   }
 
   // Validate that starsLength is greater than zero
