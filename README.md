@@ -146,7 +146,7 @@ function App() {
 ### Basic Star Rating
 
 <hr>
-  <img src="./gifs/basic.gif" alt="screenshot" width="100%" />
+  <img src="./gifs/basic.gif" alt="screenshot" width="60%" />
 <hr>
 
 #### Sample Usage
@@ -158,7 +158,7 @@ function App() {
 ### Half-Star Rating
 
 <hr>
-<img src="./gifs/half.gif" alt="screenshot" width="100%" />
+<img src="./gifs/half.gif" alt="screenshot" width="60%" />
 <hr>
 
 #### Sample Usage
@@ -175,7 +175,7 @@ function App() {
 ### Read-only Rating Display
 
 <hr>
-  <img src="./gifs/readonly.gif" alt="screenshot" width="100%" />
+  <img src="./gifs/readonly.gif" alt="screenshot" width="60%" />
 <hr>
 
 #### Sample Usage
@@ -187,7 +187,7 @@ function App() {
 ### Custom Styled Rating
 
 <hr>
-<img src="./gifs/customs.gif" alt="screenshot" width="100%" />
+<img src="./gifs/customs.gif" alt="screenshot" width="60%" />
 <hr>
 
 #### Sample Usage
@@ -199,7 +199,7 @@ function App() {
 ### Disabled Hover Effects
 
 <hr>
-<img src="./gifs/disabled.gif" alt="screenshot" width="100%" />
+<img src="./gifs/disabled.gif" alt="screenshot" width="60%" />
 <hr>
 
 #### Sample Usage
