@@ -56,14 +56,19 @@ function App() {
 | `isHoverEnabled`      | `boolean`                  | `true`      | Enable hover effects      |
 | `isReadOnly`          | `boolean`                  | `false`     | Make the rating read-only |
 | `initialRating`       | `number`                   | `0`         | Initial rating value      |
-| `dimension`           | `number`                   | `30`        | Size of stars in rem      |
+| `dimension`           | `number`                   | `30`        | Size (width & height) of stars in rem      |
 | `color`               | `string`                   | `"#FFD700"` | Star color in HEX format  |
-| `onRatingChange`      | `(rating: number) => void` | -           | Rating change callback    |
+| `onRatingChange`      | `(rating: number) => void` | `undefined` | Accepts setState or custom callback function to handle rating changes |
 
-## 📝 Examples
+## 📝 Usage Examples
 
 ### Basic Star Rating
 
+<hr>
+  <img src="./gifs/basic.gif" alt="screenshot" width="100%" />
+<hr>
+
+#### Sample Usage
 ```tsx
 <StarRating
   starsLength={5}
@@ -74,6 +79,11 @@ function App() {
 
 ### Half-Star Rating
 
+<hr>
+<img src="./gifs/half.gif" alt="screenshot" width="100%" />
+<hr>
+
+#### Sample Usage
 ```tsx
 <StarRating
   starsLength={5}
@@ -85,17 +95,27 @@ function App() {
 
 ### Read-only Rating Display
 
+<hr>
+  <img src="./gifs/readonly.gif" alt="screenshot" width="100%" />
+<hr>
+
+#### Sample Usage
 ```tsx
 <StarRating starsLength={5} initialRating={4} isReadOnly={true} />
 ```
 
 ### Custom Styled Rating
 
+<hr>
+<img src="./gifs/customs.gif" alt="screenshot" width="100%" />
+<hr>
+
+#### Sample Usage
 ```tsx
 <StarRating
-  starsLength={5}
+  starsLength={10}
   initialRating={5}
-  dimension={40}
+  dimension={50}
   color="#FF5733"
   isHoverEnabled={true}
 />
@@ -103,6 +123,11 @@ function App() {
 
 ### Disabled Hover Effects
 
+<hr>
+<img src="./gifs/disabled.gif" alt="screenshot" width="100%" />
+<hr>
+
+#### Sample Usage
 ```tsx
 <StarRating starsLength={5} initialRating={3} isHoverEnabled={false} />
 ```
