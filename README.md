@@ -34,16 +34,58 @@ pnpm add react-flexible-star-rating
 
 ## 💻 Basic Usage
 
+#### Using a Callback Function
+
+This example demonstrates how to handle rating changes using a custom callback function. The rating value is logged to the console, and if the user clicks the same rating again, it resets to 0.
+
 ```tsx
 import { StarRating } from "react-flexible-star-rating";
 
 function App() {
   const handleRatingChange = (rating: number) => {
-    // rating will be 0 when user deselects by clicking the same rating again
+    // Logs the new rating; resets to 0 if the same rating is clicked again
     console.log(`New rating: ${rating}`);
   };
 
   return <StarRating initialRating={3.5} onRatingChange={handleRatingChange} />;
+}
+```
+
+<hr>
+
+#### Using State with a Handler Function
+
+This example demonstrates how to manage the rating value using the useState hook. The handleRatingChange function updates the state when the user selects a new rating.
+
+```tsx
+import { useState } from "react";
+import { StarRating } from "react-flexible-star-rating";
+
+function App() {
+  const [rating, setRating] = useState(3.5);
+
+  const handleRatingChange = (newRating: number) => {
+    setRating(newRating); // Updates the state with the new rating
+  };
+
+  return <StarRating initialRating={rating} onRatingChange={handleRatingChange} />;
+}
+```
+
+<hr>
+
+#### Using State with Direct Setter
+
+This is a more concise approach where the setRating function is passed directly to onRatingChange, eliminating the need for an intermediary function.
+
+```tsx
+import { useState } from "react";
+import { StarRating } from "react-flexible-star-rating";
+
+function App() {
+  const [rating, setRating] = useState(3.5);
+
+  return <StarRating initialRating={rating} onRatingChange={setRating} />;
 }
 ```
 
@@ -117,7 +159,6 @@ function App() {
   initialRating={5}
   dimension={50}
   color="#FF5733"
-  isHoverEnabled={true}
 />
 ```
 
@@ -130,6 +171,7 @@ function App() {
 #### Sample Usage
 ```tsx
 <StarRating starsLength={5} initialRating={3} isHoverEnabled={false} />
+<StarRating starsLength={5} initialRating={1.5} isHoverEnabled={false} />
 ```
 
 ## 🎯 Advanced Usage
