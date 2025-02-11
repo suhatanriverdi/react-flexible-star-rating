@@ -239,9 +239,8 @@ The component supports rating deselection:
 
 For questions or suggestions, email me at: `suhatanriverdi.dev@gmail.com`
 
-
-<a href="https://www.buymeacoffee.com/suhatanriverdi" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a href="https://www.buymeacoffee.com/suhatanriverdi" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="20%"></a>
 
 _Your support means a lot to me to continue the development of open-source projects like this._
 
-<small> _Süha Tanrıverdi, 2025_ </small>
+<small>_Created by Süha Tanrıverdi, 2025_ </small>
