@@ -1,5 +1,5 @@
-import { EmptyStar, FilledStar, HalfFilledStar } from "./Stars";
-import React, { useCallback, useMemo, useState } from "react";
+import { EmptyStar, FilledStar, HalfFilledStar } from './Stars';
+import React, { useCallback, useState } from 'react';
 
 /**
  * Props for the StarRating component.
@@ -49,7 +49,7 @@ interface StarRatingProps {
   initialRating?: number;
 
   /**
-   * Dimension of the stars (width and height, in pixels).
+   * Dimension of the stars (width and height, in rem unit, 1rem is 16px by default).
    * @default Depends on the dimension defined in the star components.
    * @type {number}
    */
@@ -84,7 +84,7 @@ interface StarRatingProps {
    * <StarRating onRatingChange={handleRatingChange} />
    */
   onRatingChange?: (newRating: number) => void;
-};
+}
 
 /**
  * StarRating Component
@@ -110,30 +110,90 @@ export function StarRating({
 }: StarRatingProps): JSX.Element {
   // Validate initial rating within acceptable range
   if (initialRating > starsLength || initialRating < 0) {
-    throw new Error(
-      "initialRating must be within range: 0 <= initialRating <= starsLength.",
-    );
+    throw new Error('initialRating must be within range: 0 <= initialRating <= starsLength.');
   }
 
   // Validate that starsLength is greater than zero
   if (starsLength <= 0) {
-    throw new Error(
-      "starsLength must be greater than zero to ensure valid ratings.",
-    );
+    throw new Error('starsLength must be greater than zero to ensure valid ratings.');
   }
 
   // Ensure hover interactions are disabled when read-only mode is enabled
   if (isReadOnly && isHoverEnabled) {
     throw new Error(
-      "isHoverEnabled cannot be true when isReadOnly is enabled. Please disable hover interactions for read-only mode.",
+      'isHoverEnabled cannot be true when isReadOnly is enabled. Please disable hover interactions for read-only mode.'
     );
   }
 
-  // Memoize color to optimize performance
-  const memoizedColor: string | undefined = useMemo(() => color, [color]);
+  // State Management
 
-  // Memoize dimension to optimize performance
-  const memoizedDimension: number = useMemo(() => dimension, [dimension]);
+  /**
+   Initializes the state of stars based on initial rating.
+
+   @returns {number[]} The initial state of stars represented as an array.
+   */
+  const initializeStarsState = (): number[] => createNewStarsState(initialRating);
+
+  /**
+   Creates a new array representing the state of stars based on provided index.
+
+   @param {number} untilIndex - Rating index up to which stars should be filled.
+
+   @returns {number[]} Array representing each star's state:
+    - `0`: Empty
+    - `1`: Half-filled
+    - `2`: Fully-filled
+   */
+  const createNewStarsState = (untilIndex: number): number[] => {
+    const flooredUntilIndex = Math.floor(untilIndex);
+    const hasHalfFilledStar = untilIndex - flooredUntilIndex > 0;
+
+    const newStarsState: number[] = Array.from({ length: starsLength }, (_, index) =>
+      index < flooredUntilIndex ? 2 : 0
+    );
+
+    if (hasHalfFilledStar) {
+      newStarsState[flooredUntilIndex] = 1;
+    }
+
+    return newStarsState;
+  };
+
+  /**
+   * Holds current state of stars where each star's status is represented by a number:
+   * `0` for Empty, `1` for Half-filled, and `2` for Fully-filled.
+   * Initialized with value returned from initializeStarsState().
+   */
+  const [starsState, setStarsState] = useState<number[]>(initializeStarsState);
+
+  /**
+   * Stores previous state of stars before user interaction allowing reset if necessary.
+   * Initialized with current value of starsState at mount time.
+   */
+  const [previousStarsState, setPreviousStarsState] = useState<number[]>(starsState);
+
+  /**
+   * Tracks last clicked index by user enabling toggle logic for same rating clicks.
+   * Initialized with value of initialRating at mount time.
+   */
+  const [lastClickedUntilIndexState, setLastClickedUntilIndexState] = useState<number | null>(
+    initialRating
+  );
+
+  /**
+   * Keeps track of last side hovered over when half-star ratings are enabled
+   * aiding finer control over half-star selections. Initialized as null indicating no side selected at start.
+   */
+  const [lastSide, setLastSide] = useState<'L' | 'R' | null>(null);
+
+  /**
+   * State to track and manage the hover lock behavior.
+   *
+   * When a user de-selects a star and moves the mouse away from the star, this state ensures that the hover effect remains
+   * disabled until the mouse fully exits the star's boundary. This mechanism improves the user experience by providing a clear
+   * and consistent visual feedback, preventing any confusion regarding the hover state.
+   */
+  const [isHoverEffectLockEnabled, setIsHoverEffectLockEnabled] = useState<boolean>(false);
 
   /**
    Retrieves the corresponding star SVG component based on its state identifier.
@@ -150,14 +210,14 @@ export function StarRating({
     (starID: number): JSX.Element => {
       switch (starID) {
         case 1:
-          return <HalfFilledStar color={memoizedColor} />;
+          return <HalfFilledStar color={color} />;
         case 2:
-          return <FilledStar color={memoizedColor} />;
+          return <FilledStar color={color} />;
         default:
-          return <EmptyStar color={memoizedColor} />;
+          return <EmptyStar color={color} />;
       }
     },
-    [memoizedColor],
+    [color]
   );
 
   /**
@@ -173,40 +233,6 @@ export function StarRating({
     const midpoint = rect.width / 2;
     return event.nativeEvent.offsetX < midpoint;
   };
-
-  /**
-   Creates a new array representing the state of stars based on provided index.
-
-   @param {number} untilIndex - Rating index up to which stars should be filled.
-
-   @returns {number[]} Array representing each star's state:
-    - `0`: Empty
-    - `1`: Half-filled
-    - `2`: Fully-filled
-   */
-  const createNewStarsState = (untilIndex: number): number[] => {
-    const flooredUntilIndex = Math.floor(untilIndex);
-    const hasHalfFilledStar = untilIndex - flooredUntilIndex > 0;
-
-    const newStarsState: number[] = Array.from(
-      { length: starsLength },
-      (_, index) => (index < flooredUntilIndex ? 2 : 0),
-    );
-
-    if (hasHalfFilledStar) {
-      newStarsState[flooredUntilIndex] = 1;
-    }
-
-    return newStarsState;
-  };
-
-  /**
-   Initializes the state of stars based on initial rating.
-
-   @returns {number[]} The initial state of stars represented as an array.
-   */
-  const initializeStarsState = (): number[] =>
-    createNewStarsState(initialRating);
 
   /**
    Resets state of all stars to empty.
@@ -226,8 +252,7 @@ export function StarRating({
 
    @returns {void}
    */
-  const updateStarsState = (newStarsState: number[]): void =>
-    setStarsState(newStarsState);
+  const updateStarsState = (newStarsState: number[]): void => setStarsState(newStarsState);
 
   /**
    Updates index of last clicked star in state.
@@ -236,9 +261,8 @@ export function StarRating({
 
    @returns {void}
    */
-  const updateLastClickedUntilIndexState = (
-    newLastClickedUntilIndexState: number | null,
-  ): void => setLastClickedUntilIndexState(newLastClickedUntilIndexState);
+  const updateLastClickedUntilIndexState = (newLastClickedUntilIndexState: number | null): void =>
+    setLastClickedUntilIndexState(newLastClickedUntilIndexState);
 
   // Handles changes in rating and invokes callback if provided
   const handleRatingChange = (newRating: number): void => {
@@ -278,10 +302,7 @@ export function StarRating({
 
    @returns {number} Computed index for filling stars based on click position.
    */
-  const getUntilIndex = (
-    event: React.MouseEvent<HTMLElement>,
-    index: number,
-  ): number => {
+  const getUntilIndex = (event: React.MouseEvent<HTMLElement>, index: number): number => {
     const hasHalfFilledStar = isHalfRatingEnabled && isHalfClicked(event);
     return hasHalfFilledStar ? index - 0.5 : index;
   };
@@ -294,12 +315,10 @@ export function StarRating({
 
    @returns {void}
    */
-  const handleClick = (
-    event: React.MouseEvent<HTMLElement>,
-    index: number,
-  ): void => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>, index: number): void => {
     const untilIndex = getUntilIndex(event, index);
     handleStarsStateUpdate(untilIndex);
+    setIsHoverEffectLockEnabled(true);
   };
 
   /**
@@ -310,10 +329,7 @@ export function StarRating({
 
    @returns {void}
    */
-  const handleMouseMove = (
-    event: React.MouseEvent<HTMLDivElement>,
-    index: number,
-  ): void => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>, index: number): void => {
     if (!isHalfRatingEnabled) {
       updateStarsState(createNewStarsState(index));
       return;
@@ -326,44 +342,14 @@ export function StarRating({
     // Determine which side of a star was hovered over
     const isLeftSide = event.clientX < rect.left + midpoint;
 
-    if (isLeftSide && lastSide !== "L") {
+    if (isLeftSide && lastSide !== 'L') {
       updateStarsState(createNewStarsState(index - 0.5));
-      setLastSide("L");
-    } else if (!isLeftSide && lastSide !== "R") {
+      setLastSide('L');
+    } else if (!isLeftSide && lastSide !== 'R') {
       updateStarsState(createNewStarsState(index));
-      setLastSide("R");
+      setLastSide('R');
     }
   };
-
-  // State Management
-
-  /**
-   * Holds current state of stars where each star's status is represented by a number:
-   * `0` for Empty, `1` for Half-filled, and `2` for Fully-filled.
-   * Initialized with value returned from initializeStarsState().
-   */
-  const [starsState, setStarsState] = useState<number[]>(initializeStarsState);
-
-  /**
-   * Stores previous state of stars before user interaction allowing reset if necessary.
-   * Initialized with current value of starsState at mount time.
-   */
-  const [previousStarsState, setPreviousStarsState] =
-    useState<number[]>(starsState);
-
-  /**
-   * Tracks last clicked index by user enabling toggle logic for same rating clicks.
-   * Initialized with value of initialRating at mount time.
-   */
-  const [lastClickedUntilIndexState, setLastClickedUntilIndexState] = useState<
-    number | null
-  >(initialRating);
-
-  /**
-   * Keeps track of last side hovered over when half-star ratings are enabled
-   * aiding finer control over half-star selections. Initialized as null indicating no side selected at start.
-   */
-  const [lastSide, setLastSide] = useState<"L" | "R" | null>(null);
 
   /**
    * Renders interactive star elements based on current state.
@@ -371,24 +357,33 @@ export function StarRating({
    * @returns {JSX.Element[]} Array of rendered star components as JSX elements.
    */
   const drawStars = (): JSX.Element[] => {
-    const paddingValue = memoizedDimension ? memoizedDimension * 0.004 : 0.5;
+    const rightPaddingValue = dimension
+      ? Math.max(dimension * 0.005, dimension / starsLength / 10)
+      : 0.5;
+
+    const shouldAddRightPadding = starsLength > 1;
 
     return starsState.map((star, index) => (
       <div
         style={{
-          padding: `${paddingValue}rem`,
-          cursor: isReadOnly ? "not-allowed" : "pointer",
+          ...(shouldAddRightPadding &&
+            index < starsLength - 1 && {
+              paddingRight: `${rightPaddingValue}rem`,
+            }),
+          cursor: isReadOnly ? 'not-allowed' : 'pointer',
         }}
         key={index}
-        onMouseMove={
-          isHoverEnabled
-            ? (event) => handleMouseMove(event, index + 1)
-            : undefined
-        }
-        onMouseLeave={isHoverEnabled ? handleMouseLeave : undefined}
-        onClick={
-          isReadOnly ? undefined : (event) => handleClick(event, index + 1)
-        }
+        {...(!isReadOnly && {
+          onClick: (event) => handleClick(event, index + 1),
+          ...(isHoverEnabled && {
+            onMouseMove: !isHoverEffectLockEnabled
+              ? (event) => handleMouseMove(event, index + 1)
+              : isHalfRatingEnabled
+                ? () => setIsHoverEffectLockEnabled(false)
+                : undefined,
+            onMouseLeave: handleMouseLeave,
+          }),
+        })}
       >
         {getStarSVGs(star)}
       </div>
@@ -403,14 +398,14 @@ export function StarRating({
   const handleMouseLeave = (): void => {
     updateStarsState(previousStarsState);
     setLastSide(null);
+    setIsHoverEffectLockEnabled(false);
   };
 
   return (
     <div
       style={{
-        display: "flex",
-        width: "fit-content",
-        maxWidth: `${memoizedDimension}rem`,
+        display: 'flex',
+        maxWidth: `${dimension}rem`,
       }}
     >
       {drawStars()}
