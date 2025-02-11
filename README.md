@@ -38,9 +38,9 @@ pnpm add react-flexible-star-rating
 
 ## 💻 Basic Usage
 
-#### Using a Callback Function
+#### Using a Callback Function to Handle Rating Changes
 
-This example demonstrates how to handle rating changes using a custom callback function. The rating value is logged to the console, and if the user clicks the same rating again, it resets to 0.
+This example demonstrates how to handle rating changes using a custom callback function. The initial rating value starts at 0, and the rating is logged to the console each time the user clicks on a star. If the user clicks the same rating again, it resets to 0.
 
 ```tsx
 import { StarRating } from 'react-flexible-star-rating';
@@ -51,45 +51,80 @@ function App() {
     console.log(`New rating: ${rating}`);
   };
 
-  return <StarRating initialRating={3.5} onRatingChange={handleRatingChange} />;
+  /*
+    ⚠️ Note:
+
+    To enable half-star ratings with an initial value of 0,
+    set the `isHalfRatingEnabled` prop to `true`.
+
+    Example usages:
+      - `<StarRating isHalfRatingEnabled={true} />`
+      OR
+      - `<StarRating initialRating={0} isHalfRatingEnabled={true} />`
+  */
+  return <StarRating onRatingChange={handleRatingChange} />;
 }
 ```
 
 <hr>
 
-#### Using State with a Handler Function
+#### Using useState Hook with a Handler Function
 
-This example demonstrates how to manage the rating value using the useState hook. The handleRatingChange function updates the state when the user selects a new rating.
+This example demonstrates how to manage the rating value using the useState hook while also logging the rating changes to the console.
 
 ```tsx
 import { useState } from 'react';
 import { StarRating } from 'react-flexible-star-rating';
 
 function App() {
-  const [rating, setRating] = useState(3.5);
+  const ratingValue = 3.5;
+  const [rating, setRating] = useState(ratingValue);
 
   const handleRatingChange = (newRating: number) => {
-    setRating(newRating); // Updates the state with the new rating
+    console.log(`New rating: ${newRating}`);
+    setRating(newRating);
   };
 
-  return <StarRating initialRating={rating} onRatingChange={handleRatingChange} />;
+  {
+    /* 
+      ⚠️ Important Note:
+
+      To ensure proper functionality of the StarRating component:
+
+      1. **DO NOT** bind state directly to `initialRating`:
+        ❌ `<StarRating initialRating={rating} />`
+      
+      2. **INSTEAD**, use a static value or define the value first, then use it:
+        - **Define the value and use it:**
+          ✅ `const ratingValue = 3.5;`
+            `<StarRating initialRating={ratingValue} />`
+        
+        - **Alternatively**, you can pass the value directly:
+          ✅ `<StarRating initialRating={3.5} />`
+
+      Binding `initialRating` to state causes issues with half-ratings, making them behave like integer ratings.
+      This approach ensures that half-ratings are handled properly, avoiding issues caused by state updates.
+    */
+  }
+  return <StarRating initialRating={ratingValue} onRatingChange={handleRatingChange} />;
 }
 ```
 
 <hr>
 
-#### Using State with Direct Setter
+#### Using setState Function Directly
 
-This is a more concise approach where the setRating function is passed directly to onRatingChange, eliminating the need for an intermediary function.
+This example demonstrates how to manage the rating value using the `useState` hook without needing a separate handler function. The state is updated directly when the user selects a new rating.
 
 ```tsx
 import { useState } from 'react';
 import { StarRating } from 'react-flexible-star-rating';
 
 function App() {
-  const [rating, setRating] = useState(3.5);
+  const ratingValue = 3.5;
+  const [rating, setRating] = useState(ratingValue);
 
-  return <StarRating initialRating={rating} onRatingChange={setRating} />;
+  return <StarRating initialRating={ratingValue} onRatingChange={setRating} />;
 }
 ```
 

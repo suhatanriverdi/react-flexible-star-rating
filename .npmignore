@@ -20,11 +20,31 @@ vite.config.ts
 # Git files
 .git
 .gitignore
-.github
+
+# Documentation and assets
+gifs/
+*.gif
+
+# Development files
+node_modules/
+.DS_Store
+.env
+.env.*
 
 # IDE files
-.idea
-.vscode
+.idea/
+.vscode/
+*.sublime-*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test files
+__tests__/
+*.test.*
+*.spec.*
 
 # CI/CD
 .travis.yml
