@@ -17,17 +17,21 @@ A highly customizable and lightweight star rating component for React applicatio
 ## 📦 Installation
 
 ### Using npm
+
 ```bash
 npm install react-flexible-star-rating
 ```
 
 Alternatively, you can use yarn or pnpm:
+
 #### Using yarn
+
 ```bash
 yarn add react-flexible-star-rating
 ```
 
 #### Using pnpm
+
 ```bash
 pnpm add react-flexible-star-rating
 ```
@@ -39,7 +43,7 @@ pnpm add react-flexible-star-rating
 This example demonstrates how to handle rating changes using a custom callback function. The rating value is logged to the console, and if the user clicks the same rating again, it resets to 0.
 
 ```tsx
-import { StarRating } from "react-flexible-star-rating";
+import { StarRating } from 'react-flexible-star-rating';
 
 function App() {
   const handleRatingChange = (rating: number) => {
@@ -58,8 +62,8 @@ function App() {
 This example demonstrates how to manage the rating value using the useState hook. The handleRatingChange function updates the state when the user selects a new rating.
 
 ```tsx
-import { useState } from "react";
-import { StarRating } from "react-flexible-star-rating";
+import { useState } from 'react';
+import { StarRating } from 'react-flexible-star-rating';
 
 function App() {
   const [rating, setRating] = useState(3.5);
@@ -79,8 +83,8 @@ function App() {
 This is a more concise approach where the setRating function is passed directly to onRatingChange, eliminating the need for an intermediary function.
 
 ```tsx
-import { useState } from "react";
-import { StarRating } from "react-flexible-star-rating";
+import { useState } from 'react';
+import { StarRating } from 'react-flexible-star-rating';
 
 function App() {
   const [rating, setRating] = useState(3.5);
@@ -91,15 +95,15 @@ function App() {
 
 ## ⚙️ Props
 
-| Prop                  | Type                       | Default     | Description               |
-| --------------------- | -------------------------- | ----------- |---------------------------|
-| `starsLength`         | `number`                   | `5`         | Number of stars to display |
-| `isHalfRatingEnabled` | `boolean`                  | `false`     | Enable half-star ratings  |
-| `isHoverEnabled`      | `boolean`                  | `true`      | Enable hover effects      |
-| `isReadOnly`          | `boolean`                  | `false`     | Make the rating read-only |
-| `initialRating`       | `number`                   | `0`         | Initial rating value      |
-| `dimension`           | `number`                   | `30`        | Size (width & height) of stars in rem      |
-| `color`               | `string`                   | `"#FFD700"` | Star color in HEX format  |
+| Prop                  | Type                       | Default     | Description                                                           |
+| --------------------- | -------------------------- | ----------- | --------------------------------------------------------------------- |
+| `starsLength`         | `number`                   | `5`         | Number of stars to display                                            |
+| `isHalfRatingEnabled` | `boolean`                  | `false`     | Enable half-star ratings                                              |
+| `isHoverEnabled`      | `boolean`                  | `true`      | Enable hover effects                                                  |
+| `isReadOnly`          | `boolean`                  | `false`     | Make the rating read-only                                             |
+| `initialRating`       | `number`                   | `0`         | Initial rating value                                                  |
+| `dimension`           | `number`                   | `30`        | Size (width & height) of stars in rem                                 |
+| `color`               | `string`                   | `"#FFD700"` | Star color in HEX format                                              |
 | `onRatingChange`      | `(rating: number) => void` | `undefined` | Accepts setState or custom callback function to handle rating changes |
 
 ## 📝 Usage Examples
@@ -111,12 +115,9 @@ function App() {
 <hr>
 
 #### Sample Usage
+
 ```tsx
-<StarRating
-  starsLength={5}
-  initialRating={0}
-  onRatingChange={(rating) => console.log(rating)}
-/>
+<StarRating starsLength={5} initialRating={0} onRatingChange={(rating) => console.log(rating)} />
 ```
 
 ### Half-Star Rating
@@ -126,6 +127,7 @@ function App() {
 <hr>
 
 #### Sample Usage
+
 ```tsx
 <StarRating
   starsLength={5}
@@ -142,6 +144,7 @@ function App() {
 <hr>
 
 #### Sample Usage
+
 ```tsx
 <StarRating starsLength={5} initialRating={4} isReadOnly={true} />
 ```
@@ -153,13 +156,9 @@ function App() {
 <hr>
 
 #### Sample Usage
+
 ```tsx
-<StarRating
-  starsLength={10}
-  initialRating={5}
-  dimension={50}
-  color="#FF5733"
-/>
+<StarRating starsLength={10} initialRating={5} dimension={50} color="#FF5733" />
 ```
 
 ### Disabled Hover Effects
@@ -169,6 +168,7 @@ function App() {
 <hr>
 
 #### Sample Usage
+
 ```tsx
 <StarRating starsLength={5} initialRating={3} isHoverEnabled={false} />
 <StarRating starsLength={5} initialRating={1.5} isHoverEnabled={false} />
@@ -197,29 +197,10 @@ The component supports rating deselection:
 
 ### Performance Optimization
 
-- Uses React's `useMemo` and `useCallback` hooks for optimal rendering
-- Memoized color and dimension props to prevent unnecessary re-renders
+- Uses React's `useCallback` hooks for optimal rendering
 - Efficient state updates using React's state management
 
 ### Browser Compatibility
 
 - Supports all modern browsers (Chrome, Firefox, Safari, Edge)
 - Touch events supported for mobile devices
-
-### Troubleshooting
-
-#### Common Issues
-
-1. Rating not updating:
-
-   - Ensure `onRatingChange` prop is properly passed
-   - Check if component is not in read-only mode
-
-2. Half-star ratings not working:
-
-   - Verify `isHalfRatingEnabled` is set to `true`
-   - Check if `initialRating` has decimal values
-
-3. Hover effects not showing:
-   - Confirm `isHoverEnabled` is not set to `false`
-   - Verify the component is not in read-only mode
