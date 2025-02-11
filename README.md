@@ -52,15 +52,14 @@ function App() {
   };
 
   /*
-    ⚠️ Note:
-
+    ⚠️ Note
+    
     To enable half-star ratings with an initial value of 0,
     set the `isHalfRatingEnabled` prop to `true`.
 
     Example usages:
-      - `<StarRating isHalfRatingEnabled={true} />`
-      OR
-      - `<StarRating initialRating={0} isHalfRatingEnabled={true} />`
+      `<StarRating isHalfRatingEnabled={true} />`
+      `<StarRating initialRating={0} isHalfRatingEnabled={true} />`
   */
   return <StarRating onRatingChange={handleRatingChange} />;
 }
@@ -85,27 +84,23 @@ function App() {
     setRating(newRating);
   };
 
-  {
-    /* 
-      ⚠️ Important Note:
+  /* 
+    ⚠️ Important Note: Proper Usage of `initialRating` 
 
-      To ensure proper functionality of the StarRating component:
+      ❌ Incorrect (Avoid this):  
+        `<StarRating initialRating={rating} />`  
+        - Binding `initialRating` to state can cause half-ratings to behave like integers.  
 
-      1. **DO NOT** bind state directly to `initialRating`:
-        ❌ `<StarRating initialRating={rating} />`
-      
-      2. **INSTEAD**, use a static value or define the value first, then use it:
-        - **Define the value and use it:**
-          ✅ `const ratingValue = 3.5;`
-            `<StarRating initialRating={ratingValue} />`
-        
-        - **Alternatively**, you can pass the value directly:
-          ✅ `<StarRating initialRating={3.5} />`
+      ✅ Correct (Use one of these approaches):  
+        - Static value: `<StarRating initialRating={3.5} />`  
 
-      Binding `initialRating` to state causes issues with half-ratings, making them behave like integer ratings.
-      This approach ensures that half-ratings are handled properly, avoiding issues caused by state updates.
-    */
-  }
+        - Defined variable:  
+          `const ratingValue = 3.5;`
+          ...
+          `<StarRating initialRating={ratingValue} />`  
+
+      This ensures proper half-rating functionality of the component.
+  */
   return <StarRating initialRating={ratingValue} onRatingChange={handleRatingChange} />;
 }
 ```
@@ -239,3 +234,14 @@ The component supports rating deselection:
 
 - Supports all modern browsers (Chrome, Firefox, Safari, Edge)
 - Touch events supported for mobile devices
+
+## 📧 Contact
+
+For questions or suggestions, email me at: `suhatanriverdi.dev@gmail.com`
+
+
+<a href="https://www.buymeacoffee.com/suhatanriverdi" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+_Your support means a lot to me to continue the development of open-source projects like this._
+
+<small> _Süha Tanrıverdi, 2025_ </small>
