@@ -123,6 +123,34 @@ function App() {
 }
 ```
 
+### Next.js Usage
+
+⚠️ **Important Note for Next.js Users**
+
+When using this component in Next.js applications, you must add the `"use client"` directive at the top of your component file. This is because the star rating component uses React hooks (`useState`, `useCallback`), which can only be used in client-side components.
+
+#### Sample Usage in Next.js
+
+```tsx
+'use client'; // ⚠️ Required: do not forget this line
+
+import { useState } from 'react';
+import { StarRating } from 'react-flexible-star-rating';
+
+export default function RatingComponent() {
+  const initialRatingValue = 2;
+  const [rating, setRating] = useState(initialRatingValue);
+
+  return (
+    <div>
+      <h2>Product Rating</h2>
+      <StarRating initialRating={initialRatingValue} onRatingChange={setRating} />
+      <p>Current Rating: {rating}</p>
+    </div>
+  );
+}
+```
+
 ## ⚙️ Props
 
 | Prop                  | Type                       | Default     | Description                                                           |

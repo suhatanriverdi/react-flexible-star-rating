@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Added validation to ensure initialRating is a multiple of 0.5 when half-rating is enabled
+- Added Next.js usage instructions with "use client" directive example in documentation
 
 All notable changes to this project will be documented in this file.
 
