@@ -120,6 +120,11 @@ export function StarRating({
     );
   }
 
+  // Validate that initialRating is an integer when half-rating is disabled
+  if (!isHalfRatingEnabled && initialRating % 1 !== 0) {
+    throw new Error('initialRating must be a whole number when half-rating is disabled.');
+  }
+
   // Validate that starsLength is greater than zero
   if (starsLength <= 0) {
     throw new Error('starsLength must be greater than zero to ensure valid ratings.');

@@ -21,25 +21,38 @@ vite.config.ts
 .git
 .gitignore
 
-# Documentation and assets
-gifs/
-*.gif
+# Storybook files
+.storybook/
+src/stories/
+dist/stories/
+*.stories.*
 
 # Development files
 node_modules/
+coverage/
 .DS_Store
 .env
 .env.*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # IDE files
 .idea/
 .vscode/
-*.sublime-*
+*.swp
+*.swo
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Build artifacts
+dist/*.map
+
+# Documentation and assets
+docs/
+gifs/
+*.md
+!README.md
+!LICENSE
 
 # Test files
 __tests__/
@@ -48,6 +61,12 @@ __tests__/
 
 # CI/CD
 .travis.yml
+
+# Storybook
+.storybook/
+storybook-static/
+src/stories/
+*storybook.log
 .gitlab-ci.yml
 .circleci
 

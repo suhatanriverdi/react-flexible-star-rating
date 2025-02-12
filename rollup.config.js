@@ -14,6 +14,14 @@ const config = [
       commonjs(),
       typescript({
         useTsconfigDeclarationDir: true,
+        exclude: [
+          '**/*.stories.tsx',
+          '**/stories/**',
+          '**/__stories__/**',
+          'src/stories/**',
+          '.storybook/**',
+          'storybook-static/**',
+        ],
       }),
       terser(),
     ],
