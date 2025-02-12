@@ -267,8 +267,6 @@ The component supports rating deselection:
 - Supports all modern browsers (Chrome, Firefox, Safari, Edge)
 - Touch events supported for mobile devices
 
-# React Star Rating Component
-
 ## 🔮 TODO Features
 
 Here are some exciting features planned for future releases:
