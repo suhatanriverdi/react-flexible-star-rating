@@ -13,6 +13,8 @@ A highly customizable and lightweight star rating component for React applicatio
 - 📐 Adjustable star sizes
 - 🎯 TypeScript support
 - 🪶 Lightweight
+  - Final Bundle Size: 14.1 kB (compressed .tgz file size)
+  - Unpacked Size: 65.3 kB (size after extraction)
 
 ## 📦 Installation
 
