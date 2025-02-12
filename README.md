@@ -298,17 +298,17 @@ The component supports rating deselection:
 
 Here are some exciting features planned for future releases:
 
-- 🌐 Live Demo - An interactive demo website to showcase component features
-- ⌨️ Keyboard Navigation - Full keyboard support for better accessibility
+- ~~🌐 Live Demo - An interactive demo website to showcase component features~~ ✅
+- ⌨️ Keyboard Navigation
   - Arrow keys for rating selection
   - Space/Enter for rating confirmation
   - Escape key for rating reset
-- 🗣️ Voice Control - Voice command support for hands-free interaction
+- 🗣️ Voice Control
   - Voice commands for setting specific ratings
   - Natural language support for rating control
   - Voice feedback for current rating state
   - Voice-activated rating reset
-- ♿ Screen Reader Accessibility - Enhanced ARIA support for better screen reader compatibility
+- ♿ Screen Reader Accessibility
   - Improved ARIA labels and descriptions
   - Better announcement of rating changes
   - Enhanced focus management
