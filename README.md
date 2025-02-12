@@ -265,6 +265,20 @@ The component supports rating deselection:
 - Supports all modern browsers (Chrome, Firefox, Safari, Edge)
 - Touch events supported for mobile devices
 
+## 🔮 TODO Features
+
+Here are some exciting features planned for future releases:
+
+- 🌐 Live Demo - An interactive demo website to showcase component features
+- ⌨️ Keyboard Navigation - Full keyboard support for better accessibility
+  - Arrow keys for rating selection
+  - Space/Enter for rating confirmation
+  - Escape key for rating reset
+- ♿ Screen Reader Accessibility - Enhanced ARIA support for better screen reader compatibility
+  - Improved ARIA labels and descriptions
+  - Better announcement of rating changes
+  - Enhanced focus management
+
 ## 📧 Contact
 
 For questions or suggestions, email me at: `suhatanriverdi.dev@gmail.com`
