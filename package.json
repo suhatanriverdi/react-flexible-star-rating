@@ -30,7 +30,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "prepare": "npm run build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_78288426b6c8061"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
@@ -50,6 +51,7 @@
     "@storybook/test": "^8.5.4",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "chromatic": "^11.25.2",
     "eslint": "^8.0.0",
     "eslint-plugin-storybook": "^0.11.2",
     "prettier": "^3.0.0",

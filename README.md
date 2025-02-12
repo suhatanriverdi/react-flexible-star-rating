@@ -1,6 +1,21 @@
 # React Star Rating Component
 
+[![NPM](https://img.shields.io/npm/v/react-flexible-star-rating.svg)](https://www.npmjs.com/package/react-flexible-star-rating) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) ![npm bundle size](https://img.shields.io/bundlephobia/min/react-flexible-star-rating) ![GitHub](https://img.shields.io/github/license/suhatanriverdi/react-flexible-star-rating)
+
 A highly customizable and lightweight star rating component for React applications. Supports both full and half-star ratings with extensive customization options.
+
+## 🎮 Demos
+
+See all demos and usage examples in action:
+
+- [Basic Star Rating](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--basic)
+- [Half-Star Rating](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--half-star-rating)
+- [Custom Styled Rating (Red)](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--custom-styled-red)
+- [Custom Styled Rating (Green)](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--custom-styled-green)
+- [Custom Styled Rating (Blue)](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--custom-styled-blue)
+- [Single Large Star](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--single-large-star)
+- [Read-only Rating](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--read-only)
+- [Disabled Hover Effects](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--disabled-hover)
 
 ## 🚀 Features
 
@@ -172,6 +187,8 @@ export default function RatingComponent() {
 
 ### Basic Star Rating
 
+[View Story](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--basic)
+
 <hr>
   <img src="./gifs/basic.gif" alt="screenshot" width="60%" />
 <hr>
@@ -183,6 +200,8 @@ export default function RatingComponent() {
 ```
 
 ### Half-Star Rating
+
+[View Story](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--half-star-rating)
 
 <hr>
 <img src="./gifs/half.gif" alt="screenshot" width="60%" />
@@ -201,6 +220,8 @@ export default function RatingComponent() {
 
 ### Read-only Rating Display
 
+[View Story](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--read-only)
+
 <hr>
   <img src="./gifs/readonly.gif" alt="screenshot" width="60%" />
 <hr>
@@ -213,6 +234,8 @@ export default function RatingComponent() {
 
 ### Custom Styled Rating
 
+[View Story](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--custom-styled-red)
+
 <hr>
 <img src="./gifs/customs.gif" alt="screenshot" width="60%" />
 <hr>
@@ -224,6 +247,8 @@ export default function RatingComponent() {
 ```
 
 ### Disabled Hover Effects
+
+[View Story](https://67accf8b8080b9c7771736c7-mtrdmbtlka.chromatic.com/?path=/story/components-starrating--disabled-hover)
 
 <hr>
 <img src="./gifs/disabled.gif" alt="screenshot" width="60%" />
