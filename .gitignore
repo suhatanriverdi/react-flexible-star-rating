@@ -50,9 +50,4 @@ coverage
 .vercel
 
 # Storybook
-.storybook/
 storybook-static/
-src/stories/
-.netlify
-
-*storybook.log

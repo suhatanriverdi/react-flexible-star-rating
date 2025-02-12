@@ -1,0 +1,45 @@
+
+> react-flexible-star-rating@1.0.5 build-storybook
+> storybook build --output-dir=/var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT
+
+[1m@storybook/core v8.5.4
+[22m
+info => Cleaning outputDir: [36m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT[39m
+info => Loading presets
+info => Building manager..
+info => Manager built ([38;2;181;126;229m89 ms[39m)
+info => Building preview..
+WARN No story files found for the specified pattern: [34msrc/**/*.mdx[39m
+info Using tsconfig paths for react-docgen
+[36mvite v6.1.0 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 102 modules transformed.
+rendering chunks...
+computing gzip size...
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[32miframe.html                               [39m[1m[2m 16.32 kB[22m[1m[22m[2m │ gzip:   4.44 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mpreview-CIRcjyVj.js                [39m[1m[2m  0.11 kB[22m[1m[22m[2m │ gzip:   0.11 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mpreview-D34Q_Rs5.js                [39m[1m[2m  0.16 kB[22m[1m[22m[2m │ gzip:   0.16 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mpreview-Br-h4d84.js                [39m[1m[2m  0.17 kB[22m[1m[22m[2m │ gzip:   0.15 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mindex-CePRvBtH.js                  [39m[1m[2m  0.42 kB[22m[1m[22m[2m │ gzip:   0.27 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mpreview-DGUiP6tS.js                [39m[1m[2m  0.71 kB[22m[1m[22m[2m │ gzip:   0.50 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mchunk-XP5HYGXS-D5tuasO7.js         [39m[1m[2m  0.72 kB[22m[1m[22m[2m │ gzip:   0.40 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mjsx-runtime-D_zvdyIk.js            [39m[1m[2m  0.73 kB[22m[1m[22m[2m │ gzip:   0.46 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mpreview-BACTtaFd.js                [39m[1m[2m  0.75 kB[22m[1m[22m[2m │ gzip:   0.50 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mindex-DrFu-skq.js                  [39m[1m[2m  0.77 kB[22m[1m[22m[2m │ gzip:   0.47 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mpreview-1l6V4UsQ.js                [39m[1m[2m  3.50 kB[22m[1m[22m[2m │ gzip:   1.69 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mpreview-D77C14du.js                [39m[1m[2m  5.03 kB[22m[1m[22m[2m │ gzip:   1.86 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mpreview-BWzBA1C2.js                [39m[1m[2m  7.62 kB[22m[1m[22m[2m │ gzip:   1.56 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mindex-DmM0KDA7.js                  [39m[1m[2m  7.90 kB[22m[1m[22m[2m │ gzip:   3.06 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mpreview-BBWR9nbA.js                [39m[1m[2m  8.12 kB[22m[1m[22m[2m │ gzip:   3.10 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mStarRating.stories-BjyBjsil.js     [39m[1m[2m 14.77 kB[22m[1m[22m[2m │ gzip:   4.65 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mColor-F6OSRLHC-DRJm9R5S.js         [39m[1m[2m 29.31 kB[22m[1m[22m[2m │ gzip:  11.04 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mentry-preview-DesHYm-L.js          [39m[1m[2m 29.76 kB[22m[1m[22m[2m │ gzip:   9.69 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mindex-CXQShRbs.js                  [39m[1m[2m 53.73 kB[22m[1m[22m[2m │ gzip:  15.55 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mreact-18-1J8poY5f.js               [39m[1m[2m177.05 kB[22m[1m[22m[2m │ gzip:  56.13 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36miframe-eBNXTf0V.js                 [39m[1m[2m191.25 kB[22m[1m[22m[2m │ gzip:  66.35 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mentry-preview-docs-BgFJZH-F.js     [39m[1m[2m244.57 kB[22m[1m[22m[2m │ gzip:  73.38 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mindex-Dt18g86q.js                  [39m[1m[33m661.24 kB[39m[22m[2m │ gzip: 156.42 kB[22m
+[2m../../../../var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT/[22m[2massets/[22m[36mDocsRenderer-CFRXHY34-D4oeBBgK.js  [39m[1m[33m870.90 kB[39m[22m[2m │ gzip: 273.01 kB[22m
+[32m✓ built in 2.19s[39m
+info => Preview built ([38;2;181;126;229m2.42 s[39m)
+info => Output directory: /var/folders/_k/yjg2wgvj64n7tnp8slwv3zjc0000gp/T/chromatic--58437-GRCJLq0lVDxT
