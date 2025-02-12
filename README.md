@@ -4,9 +4,11 @@
 
 A highly customizable and lightweight star rating component for React applications. Supports both full and half-star ratings with extensive customization options.
 
-## 🎮 Live Demos 🚀  
+## 🎮 Live Demos 🚀
 
-See all interactive demos and usage examples in action:  
+See all interactive demos and usage examples in action:
+
+### 🎯 [**Interactive Demo Gallery**](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/docs/components-starrating--docs) – Explore All Features & Examples
 
 ✨ [**Basic Star Rating**](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--basic) – Simple & clean star rating  
 🌗 [**Half-Star Rating**](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--half-star-rating) – Supports half-star selection  
@@ -187,7 +189,7 @@ export default function RatingComponent() {
 
 ### Basic Star Rating
 
-🔴 Live Demo: [Try it out](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--basic)
+⚡ [Interactive Demo](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--basic)
 
 <hr>
   <img src="./gifs/basic.gif" alt="screenshot" width="60%" />
@@ -201,7 +203,7 @@ export default function RatingComponent() {
 
 ### Half-Star Rating
 
-🔴 Live Demo: [Try it out](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--half-star-rating)
+⚡ [Interactive Demo](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--half-star-rating)
 
 <hr>
 <img src="./gifs/half.gif" alt="screenshot" width="60%" />
@@ -220,7 +222,7 @@ export default function RatingComponent() {
 
 ### Read-only Rating Display
 
-🔴 Live Demo: [Try it out](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--read-only)
+⚡ [Interactive Demo](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--read-only)
 
 <hr>
   <img src="./gifs/readonly.gif" alt="screenshot" width="60%" />
@@ -234,7 +236,7 @@ export default function RatingComponent() {
 
 ### Custom Styled Rating
 
-🔴 Live Demo: [Try it out](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--custom-styled-red)
+⚡ [Interactive Demo](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--custom-styled-red)
 
 <hr>
 <img src="./gifs/customs.gif" alt="screenshot" width="60%" />
@@ -248,7 +250,7 @@ export default function RatingComponent() {
 
 ### Disabled Hover Effects
 
-🔴 Live Demo: [Try it out](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--disabled-hover)
+⚡ [Interactive Demo](https://67accf8b8080b9c7771736c7-dihbfchhak.chromatic.com/?path=/story/components-starrating--disabled-hover)
 
 <hr>
 <img src="./gifs/disabled.gif" alt="screenshot" width="60%" />
