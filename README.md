@@ -265,6 +265,8 @@ The component supports rating deselection:
 - Supports all modern browsers (Chrome, Firefox, Safari, Edge)
 - Touch events supported for mobile devices
 
+# React Star Rating Component
+
 ## 🔮 TODO Features
 
 Here are some exciting features planned for future releases:
@@ -274,6 +276,11 @@ Here are some exciting features planned for future releases:
   - Arrow keys for rating selection
   - Space/Enter for rating confirmation
   - Escape key for rating reset
+- 🗣️ Voice Control - Voice command support for hands-free interaction
+  - Voice commands for setting specific ratings
+  - Natural language support for rating control
+  - Voice feedback for current rating state
+  - Voice-activated rating reset
 - ♿ Screen Reader Accessibility - Enhanced ARIA support for better screen reader compatibility
   - Improved ARIA labels and descriptions
   - Better announcement of rating changes
