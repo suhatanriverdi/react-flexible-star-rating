@@ -30,8 +30,8 @@ See all interactive demos and usage examples in action:
 - 📐 Adjustable star sizes
 - 🎯 TypeScript support
 - 🪶 Lightweight
-  - Final Bundle Size: 14.1 kB (compressed .tgz file size)
-  - Unpacked Size: 65.3 kB (size after extraction)
+  - Final Bundle Size: 15.7 kB (compressed .tgz file size)
+  - Unpacked Size: 70.2 kB (size after npm install)
 
 ## 📦 Installation
 
