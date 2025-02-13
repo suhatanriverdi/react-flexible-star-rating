@@ -31,7 +31,7 @@
     "prepare": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_78288426b6c8061"
+    "chromatic": "dotenv -e .env -- npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
@@ -52,6 +52,7 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "chromatic": "^11.25.2",
+    "dotenv-cli": "^8.0.0",
     "eslint": "^8.0.0",
     "eslint-plugin-storybook": "^0.11.2",
     "prettier": "^3.0.0",
